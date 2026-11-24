@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="84 15 832 940" role="img" aria-labelledby="title desc">
+<title id="title">CNN architecture for eight-category ECG-image classification</title>
+<desc id="desc">Input 64 by 64 grayscale. Two 64-filter convolutions and batch norm, pooling and dropout; two 128-filter convolutions, pooling and dropout; two 256-filter convolutions, pooling and dropout; flatten, dense 512 and dropout, final softmax with eight classes.</desc>
+<rect x="-15" y="-15" width="1030" height="980" fill="#ffffff"/>
+<rect width="1000" height="950" fill="#ffffff"/>
+<text x="500" y="52" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#142a46">Eight-Class ECG Image CNN</text>
+<text x="500" y="78" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#53657d">Layer sequence and tensor dimensions from create_model()</text>
+<rect x="100" y="102" width="800" height="95" rx="18" fill="#f5f9ff" stroke="#a7c2e2" stroke-width="1.5"/>
+<rect x="110" y="110" width="9" height="79" rx="4.5" fill="#2a619b"/>
+<text x="132" y="131" font-family="Arial,Helvetica,sans-serif" fill="#4775a4" font-size="13" font-weight="700">INPUT</text>
+<text x="132" y="160" font-family="Arial,Helvetica,sans-serif" fill="#183451" font-size="23" font-weight="700">Grayscale ECG image</text>
+<text x="132" y="185" font-family="Arial,Helvetica,sans-serif" fill="#435872" font-size="16">Input shape: 64 × 64 × 1</text>
+<text x="868" y="158" font-family="Arial,Helvetica,sans-serif" text-anchor="end" fill="#255a92" font-size="18" font-weight="700">64 × 64 × 1</text>
+<line x1="500" y1="197" x2="500" y2="227" stroke="#6587a9" stroke-width="3"/><path d="M 491 219 L 500 230 L 509 219" fill="none" stroke="#6587a9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="235" width="800" height="112" rx="18" fill="#f5f9ff" stroke="#a7c2e2" stroke-width="1.5"/>
+<rect x="110" y="243" width="9" height="96" rx="4.5" fill="#2a619b"/>
+<text x="132" y="264" font-family="Arial,Helvetica,sans-serif" fill="#4775a4" font-size="13" font-weight="700">BLOCK 1</text>
+<text x="132" y="293" font-family="Arial,Helvetica,sans-serif" fill="#183451" font-size="23" font-weight="700">64-channel feature extraction</text>
+<text x="132" y="318" font-family="Arial,Helvetica,sans-serif" fill="#435872" font-size="16">Conv 4×4 (64) → BatchNorm → Conv 4×4 (64)</text>
+<text x="868" y="291" font-family="Arial,Helvetica,sans-serif" text-anchor="end" fill="#255a92" font-size="18" font-weight="700">32 × 32 × 64</text>
+<text x="132" y="334" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#435872">MaxPool 2×2 → Dropout 0.20</text>
+<line x1="500" y1="347" x2="500" y2="375" stroke="#6587a9" stroke-width="3"/><path d="M 491 367 L 500 378 L 509 367" fill="none" stroke="#6587a9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="383" width="800" height="112" rx="18" fill="#f5f9ff" stroke="#a7c2e2" stroke-width="1.5"/>
+<rect x="110" y="391" width="9" height="96" rx="4.5" fill="#2a619b"/>
+<text x="132" y="412" font-family="Arial,Helvetica,sans-serif" fill="#4775a4" font-size="13" font-weight="700">BLOCK 2</text>
+<text x="132" y="441" font-family="Arial,Helvetica,sans-serif" fill="#183451" font-size="23" font-weight="700">128-channel feature extraction</text>
+<text x="132" y="466" font-family="Arial,Helvetica,sans-serif" fill="#435872" font-size="16">Conv 4×4 (128) → Conv 4×4 (128)</text>
+<text x="868" y="439" font-family="Arial,Helvetica,sans-serif" text-anchor="end" fill="#255a92" font-size="18" font-weight="700">16 × 16 × 128</text>
+<text x="132" y="482" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#435872">MaxPool 2×2 → Dropout 0.20</text>
+<line x1="500" y1="495" x2="500" y2="523" stroke="#6587a9" stroke-width="3"/><path d="M 491 515 L 500 526 L 509 515" fill="none" stroke="#6587a9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="531" width="800" height="112" rx="18" fill="#f5f9ff" stroke="#a7c2e2" stroke-width="1.5"/>
+<rect x="110" y="539" width="9" height="96" rx="4.5" fill="#2a619b"/>
+<text x="132" y="560" font-family="Arial,Helvetica,sans-serif" fill="#4775a4" font-size="13" font-weight="700">BLOCK 3</text>
+<text x="132" y="589" font-family="Arial,Helvetica,sans-serif" fill="#183451" font-size="23" font-weight="700">256-channel feature extraction</text>
+<text x="132" y="614" font-family="Arial,Helvetica,sans-serif" fill="#435872" font-size="16">Conv 4×4 (256) → Conv 4×4 (256)</text>
+<text x="868" y="587" font-family="Arial,Helvetica,sans-serif" text-anchor="end" fill="#255a92" font-size="18" font-weight="700">8 × 8 × 256</text>
+<text x="132" y="630" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#435872">MaxPool 2×2 → Dropout 0.20</text>
+<line x1="500" y1="643" x2="500" y2="671" stroke="#6587a9" stroke-width="3"/><path d="M 491 663 L 500 674 L 509 663" fill="none" stroke="#6587a9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="679" width="800" height="102" rx="18" fill="#f5f9ff" stroke="#a7c2e2" stroke-width="1.5"/>
+<rect x="110" y="687" width="9" height="86" rx="4.5" fill="#2a619b"/>
+<text x="132" y="708" font-family="Arial,Helvetica,sans-serif" fill="#4775a4" font-size="13" font-weight="700">CLASSIFIER</text>
+<text x="132" y="737" font-family="Arial,Helvetica,sans-serif" fill="#183451" font-size="23" font-weight="700">Flatten → Dense (512, ReLU)</text>
+<text x="132" y="762" font-family="Arial,Helvetica,sans-serif" fill="#435872" font-size="16">Flatten 16,384 features · Dropout 0.50 after Dense</text>
+<text x="868" y="735" font-family="Arial,Helvetica,sans-serif" text-anchor="end" fill="#255a92" font-size="18" font-weight="700">512 units</text>
+<line x1="500" y1="781" x2="500" y2="809" stroke="#6587a9" stroke-width="3"/><path d="M 491 801 L 500 812 L 509 801" fill="none" stroke="#6587a9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="817" width="800" height="96" rx="18" fill="#edf5ff" stroke="#a7c2e2" stroke-width="1.5"/>
+<rect x="110" y="825" width="9" height="80" rx="4.5" fill="#2a619b"/>
+<text x="132" y="846" font-family="Arial,Helvetica,sans-serif" fill="#4775a4" font-size="13" font-weight="700">OUTPUT</text>
+<text x="132" y="875" font-family="Arial,Helvetica,sans-serif" fill="#183451" font-size="23" font-weight="700">Dense (8) + softmax</text>
+<text x="132" y="900" font-family="Arial,Helvetica,sans-serif" fill="#435872" font-size="16">Eight ECG annotation categories</text>
+<text x="868" y="873" font-family="Arial,Helvetica,sans-serif" text-anchor="end" fill="#255a92" font-size="18" font-weight="700">8 classes</text>
+<text x="500" y="937" font-family="Arial,Helvetica,sans-serif" font-size="14" text-anchor="middle" fill="#53657d">ReLU + same padding on all convolutions · L1/L2 on Conv1; L2 on other weighted layers (λ = 10⁻⁴)</text>
+</svg>
